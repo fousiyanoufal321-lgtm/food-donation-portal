@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Food & NGO Connection</title>
+    <style>
+        :root {
+            --secondary-color: #0b535c;
+            --primary-color: #f07b3f;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--secondary-color);
+            color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 0 0 15px 15px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        .container {
+            padding: 20px;
+            max-width: 450px;
+            margin: auto;
+        }
+        .form-section {
+            background: var(--card-bg);
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        h2 {
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        label {
+            display: block;
+            margin-bottom: 3px;
+            font-weight: bold;
+            color: var(--text-color);
+            font-size: 13px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #dddddd;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #d8682b;
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your surplus belongs at someone's table.</h1>
+    <p>Share fresh, safe food with local partners.</p>
+</header>
+
+<div class="container">
+    <section class="form-section">
+        <h2>Donate Food & Connect NGO</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit">Submit Donation</button>
+        </form>
+        <div class="footer-note">
+            Thank you for choosing to share your surplus food!
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

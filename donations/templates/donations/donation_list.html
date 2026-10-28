@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Food List</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f7; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h2 { color: #0b535c; margin-bottom: 20px; font-size: 22px; }
+        .food-grid { display: flex; gap: 20px; margin-bottom: 30px; flex-wrap: wrap; }
+        .food-card { background: #fafbfc; border: 1px solid #e1e8ed; border-radius: 10px; padding: 20px; flex: 1; min-width: 250px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .food-title { font-weight: bold; font-size: 18px; color: #111; margin-bottom: 8px; text-transform: uppercase; }
+        .food-details { font-size: 14px; color: #555; margin-bottom: 12px; }
+        .pickup-badge { display: inline-block; background-color: #e6f4ea; color: #137333; padding: 5px 10px; border-radius: 6px; font-size: 13px; font-weight: 600; }
+        .section-title { font-size: 18px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #222; }
+        .pickup-item { font-size: 14px; margin-bottom: 10px; color: #444; }
+        .community-box { background: #f8f9fa; border-left: 4px solid #0b535c; padding: 15px; margin-top: 30px; border-radius: 0 8px 8px 0; }
+        .community-box h4 { margin: 0 0 10px 0; color: #0b535c; }
+        .community-steps { font-size: 14px; color: #555; line-height: 1.6; margin: 0; padding-left: 20px; }
+        .btn-next { display: block; width: 100%; background-color: #0b535c; color: white; text-align: center; padding: 14px; border-radius: 8px; text-decoration: none; font-size: 16px; font-weight: bold; margin-top: 30px; box-sizing: border-box; }
+        .btn-next:hover { background-color: #08434a; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Available food</h2>
+    <div class="food-grid">
+        <div class="food-card">
+            <div class="food-title">BIRIYANI</div>
+            <div class="food-details">10 KG | 6 crates<br>Mueller 2.1 mi away</div>
+            <div class="pickup-badge">Pickup today</div>
+        </div>
+        <div class="food-card">
+            <div class="food-title">MANDHI</div>
+            <div class="food-details">15 KG | 4 crates<br>Cherrywood 1.4 mi away</div>
+            <div class="pickup-badge">Pickup today</div>
+        </div>
+    </div>
+
+    <div class="section-title">Upcoming pickups</div>
+    <div class="pickup-item"><strong>OCT 15</strong><br>Orchard fruit 24 kg<br>Oak Street Pantry</div>
+    <div class="pickup-item" style="margin-top: 15px;"><strong>OCT 16</strong><br>Prepared meals 32 kg<br>Riverside Community Kitchen</div>
+
+    <div class="community-box">
+        <h4>From your kitchen to our community</h4>
+        <p style="font-size: 13px; color: #666; margin-bottom: 8px;">Donations go directly to verified local pantries and community kitchens.</p>
+        <ol class="community-steps">
+            <li><strong>List your food</strong><br>Add quantity and a safe pickup window.</li>
+            <li><strong>We connect</strong><br>A local partner confirms your donation.</li>
+            <li><strong>Share locally</strong><br>Food is collected and served nearby.</li>
+        </ol>
+    </div>
+
+    <a href="{% url 'create_food_donation' %}" class="btn-next">Next</a>
+</div>
+
+</body>
+</html>

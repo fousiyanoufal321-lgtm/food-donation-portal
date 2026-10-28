@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Food</title>
+    <style>
+        :root { --primary-color: #f07b3f; --secondary-color: #0b535c; --bg-color: #f4f6f7; --text-color: #333; --light-text: #666; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; }
+        header { background-color: var(--secondary-color); color: #fff; padding: 30px 40px; border-radius: 0 0 20px 20px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { margin: 0; font-size: 24px; }
+        .btn-donate { background-color: var(--primary-color); color: #fff; border: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; }
+        .container { padding: 40px; max-width: 1200px; margin: auto; }
+        section { background: #fff; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        section h2 { font-size: 22px; color: var(--secondary-color); margin-top: 0; margin-bottom: 10px; }
+        section p { color: var(--light-text); margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .card { border: 1px solid #ddd; padding: 20px; border-radius: 10px; position: relative; }
+        .card h3 { margin: 0 0 10px 0; font-size: 18px; }
+        .card p { margin: 5px 0; color: var(--light-text); font-size: 14px; }
+        .status { color: #00875a; font-weight: bold; font-size: 14px; margin-top: 10px; display: block; }
+        .pickup-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .pickup-item:last-child { border-bottom: none; }
+        .pickup-item p { margin: 5px 0; }
+        .pickup-date { color: var(--primary-color); font-weight: bold; }
+        .step { display: flex; align-items: flex-start; margin-bottom: 20px; }
+        .step:last-child { margin-bottom: 0; }
+        .step-number { background-color: #e6f7f8; color: var(--secondary-color); width: 30px; height: 30px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; margin-right: 15px; flex-shrink: 0; }
+        .step-content h4 { margin: 0 0 5px 0; color: var(--text-color); }
+        .step-content p { margin: 0; font-size: 14px; color: var(--light-text); }
+        .btn-next { background-color: var(--secondary-color); color: #fff; border: none; padding: 15px 30px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 18px; width: 100%; margin-top: 20px; text-align: center; display: block; text-decoration: none; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your surplus belongs at someone's table.</h1>
+    <button class="btn-donate">+ Donate food</button>
+</header>
+
+<div class="container">
+    <section>
+        <h2>Available food</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>BIRIYANI</h3>
+                <p>10 KG | 6 crates</p>
+                <p>Mueller 2.1 mi away</p>
+                <span class="status">Pickup today</span>
+            </div>
+            <div class="card">
+                <h3>MANDHI</h3>
+                <p>15 KG | 4 crates</p>
+                <p>Cherrywood 1.4 mi away</p>
+                <span class="status">Pickup today</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Upcoming pickups</h2>
+        <div class="pickup-item">
+            <p class="pickup-date">OCT 15</p>
+            <p><strong>Orchard fruit</strong> 24 kg</p>
+            <p>Oak Street Pantry</p>
+        </div>
+        <div class="pickup-item">
+            <p class="pickup-date">OCT 16</p>
+            <p><strong>Prepared meals</strong> 32 kg</p>
+            <p>Riverside Community Kitchen</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>From your kitchen to our community</h2>
+        <p>Donations go directly to verified local pantries and community kitchens.</p>
+        
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h4>List your food</h4>
+                <p>Add quantity and a safe pickup window.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h4>We connect</h4>
+                <p>A local partner confirms your donation.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h4>Share locally</h4>
+                <p>Food is collected and served nearby.</p>
+            </div>
+        </div>
+        
+        <a href="{% url 'donate' %}" class="btn-next">Next</a>
+    </section>
+</div>
+
+</body>
+</html>
